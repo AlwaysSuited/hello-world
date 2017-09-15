@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+
+
+using namespace std;
+
+class ItemToPurchase
+{
+    public:
+        ItemToPurchase(string, int, int);
+        ItemToPurchase();
+        void SetName(string);
+        string GetName()const;
+        void SetPrice(int);
+        int GetPrice()const;
+        void SetQuantity(int);
+        int GetQuantity()const;
+        void PrintItemCost();
+    private:
+        string itemName;
+        int itemPrice;
+        int itemQuantity;
+
+};
