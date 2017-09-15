@@ -1,0 +1,41 @@
+#include <iostream>
+#include "ItemToPurchase.h"
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    string itemName = " ";
+    int itemQuantity;
+    int itemPrice;
+    cout << "Item 1" << endl;
+    cout << "Enter the item name:" << endl;
+    getline(cin, itemName);
+    cout << "Enter the item price:" << endl;
+    cin >> itemPrice;
+    cout << "Enter the item quantity:" << endl;
+    cin >> itemQuantity;
+    ItemToPurchase itemToAdd1(itemName, itemPrice, itemQuantity);
+    cout << endl;
+    cout << "Item 2" << endl;
+    cout << "Enter the item name:" << endl;
+    cin.ignore();
+    getline(cin, itemName);
+    cout << "Enter the item price:" << endl;
+    cin >> itemPrice;
+    cout << "Enter the item quantity:" << endl;
+    cin >> itemQuantity;
+    ItemToPurchase itemToAdd2(itemName, itemPrice, itemQuantity);
+    cout << endl;
+
+    cout << "TOTAL COST" << endl;
+
+    itemToAdd1.PrintItemCost();
+    itemToAdd2.PrintItemCost();
+
+    cout << endl;
+    cout << "Total: $" << (itemToAdd1.GetPrice()*itemToAdd1.GetQuantity() + itemToAdd2.GetPrice()*itemToAdd2.GetQuantity()) << endl;
+
+    cin.get(); cin.get();
+}
