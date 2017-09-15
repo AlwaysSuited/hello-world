@@ -1,0 +1,55 @@
+#include <iostream>
+#include <string>
+#include "ItemToPurchase.h"
+
+using namespace std;
+
+
+void ItemToPurchase::SetName(string itemNam)
+{
+    itemName = itemNam;
+}
+
+void ItemToPurchase::SetPrice(int itemPric)
+{
+    itemPrice = itemPric;
+}
+
+void ItemToPurchase::SetQuantity(int itemQuantit)
+{
+    itemQuantity = itemQuantit;
+}
+
+string ItemToPurchase::GetName() const
+{
+    return itemName;
+}
+int ItemToPurchase::GetPrice() const
+{
+    return itemPrice;
+}
+int ItemToPurchase::GetQuantity() const
+{
+    return itemQuantity;
+}
+
+
+ItemToPurchase::ItemToPurchase(string name, int price, int quantity)
+{
+    SetName(name);
+    SetPrice(price);
+    SetQuantity(quantity);
+}
+
+ItemToPurchase::ItemToPurchase()
+{
+    itemName="none";
+    itemPrice=0;
+    itemQuantity=0;
+}
+
+void ItemToPurchase::PrintItemCost()
+{
+cout << itemName << " " << itemQuantity << " @ $" << itemPrice << " = $" << itemQuantity * itemPrice << endl;
+return;
+}
